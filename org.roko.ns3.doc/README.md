@@ -37,3 +37,6 @@ Tasks:
 - multitenancy
 - rate limiting
 
+Next steps:
+
+- start implementing storage api componeent
