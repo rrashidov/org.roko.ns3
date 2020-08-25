@@ -7,5 +7,6 @@
   
   <modules>
   	<module>org.roko.ns3.doc</module>
+  	<module>org.roko.ns3.storage.api</module>
   </modules>
 </project>
