@@ -8,5 +8,6 @@
   <modules>
   	<module>org.roko.ns3.doc</module>
   	<module>org.roko.ns3.storage.api</module>
+	<module>org.roko.ns3.fic</module>
   </modules>
 </project>
