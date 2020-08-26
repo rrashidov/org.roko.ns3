@@ -24,6 +24,12 @@ The purpose of this part would be just to store the files, without keeping track
 - deleteFile(String id)
 - List<StoredFile> list()
 
+### FIC - File ID Calculator
+
+The purpose of this part would be just to calculate thee ID of a file being uploaded. From this point of view, the APIs/capabilities of the FIC component would be the following ones:
+
+- String calculate(File f)
+
 ## Working notes
 
 Tasks:
