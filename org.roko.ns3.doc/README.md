@@ -48,6 +48,7 @@ Tasks:
 Next steps:
 
 - start implementing storage api componeent
+- find out how to instantiate MessageDigest as a bean and then have it ingested where needed
 
 ## Future Improvements
 
