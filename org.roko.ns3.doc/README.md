@@ -30,6 +30,8 @@ The purpose of this part would be just to calculate thee ID of a file being uplo
 
 - String calculate(File f)
 
+This part could be implemented as serverless.
+
 ## Working notes
 
 Tasks:
@@ -46,3 +48,7 @@ Tasks:
 Next steps:
 
 - start implementing storage api componeent
+
+## Future Improvements
+
+- implement fic (file ID calculator) as serverless;
