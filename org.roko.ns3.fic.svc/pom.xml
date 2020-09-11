@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>org.roko.ns3</groupId>
-	<artifactId>org.roko.ns3.fic</artifactId>
+	<artifactId>org.roko.ns3.fic.svc</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>org.roko.ns3.fic</name>
-	<description>File ID Calculator</description>
+	<name>org.roko.ns3.fic.svc</name>
+	<description>File ID Calculator Service</description>
 
 	<properties>
 		<java.version>1.8</java.version>
