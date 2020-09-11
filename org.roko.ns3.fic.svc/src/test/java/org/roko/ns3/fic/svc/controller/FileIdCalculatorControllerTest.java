@@ -1,4 +1,4 @@
-package org.roko.ns3.org.roko.ns3.fic.svc;
+package org.roko.ns3.fic.svc.controller;
 
 import static org.mockito.Mockito.when;
 import static org.mockito.Mockito.verify;
@@ -9,8 +9,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import org.roko.ns3.org.roko.ns3.fic.svc.controller.FileIdCalculatorController;
-import org.roko.ns3.org.roko.ns3.fic.svc.service.FileIdCalculatorService;
+import org.roko.ns3.fic.svc.controller.FileIdCalculatorController;
+import org.roko.ns3.fic.svc.service.FileIdCalculatorService;
 import org.springframework.web.multipart.MultipartFile;
 
 public class FileIdCalculatorControllerTest {

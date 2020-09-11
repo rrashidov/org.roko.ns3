@@ -1,4 +1,4 @@
-package org.roko.ns3.org.roko.ns3.fic.svc;
+package org.roko.ns3.fic.svc;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
