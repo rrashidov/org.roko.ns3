@@ -1,4 +1,4 @@
-package org.roko.ns3.org.roko.ns3.fic.svc.service;
+package org.roko.ns3.fic.svc.service;
 
 public interface FileIdCalculatorService {
 

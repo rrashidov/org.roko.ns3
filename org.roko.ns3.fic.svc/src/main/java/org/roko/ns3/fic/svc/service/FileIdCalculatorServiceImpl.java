@@ -1,4 +1,4 @@
-package org.roko.ns3.org.roko.ns3.fic.svc.service;
+package org.roko.ns3.fic.svc.service;
 
 import java.math.BigInteger;
 import java.security.MessageDigest;

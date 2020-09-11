@@ -1,8 +1,9 @@
-package org.roko.ns3.org.roko.ns3.fic.svc.controller;
+package org.roko.ns3.fic.svc.controller;
 
 import java.io.IOException;
 
-import org.roko.ns3.org.roko.ns3.fic.svc.service.FileIdCalculatorService;
+import org.roko.ns3.fic.svc.service.FileIdCalculatorService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -15,6 +16,7 @@ public class FileIdCalculatorController {
 
 	private FileIdCalculatorService fileIdCalculatorService;
 
+	@Autowired
 	public FileIdCalculatorController(FileIdCalculatorService fileIdCalculatorService) {
 		this.fileIdCalculatorService = fileIdCalculatorService;
 	}

@@ -1,4 +1,4 @@
-package org.roko.ns3.org.roko.ns3.fic.svc.service;
+package org.roko.ns3.fic.svc.service;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.verify;
@@ -6,6 +6,8 @@ import static org.mockito.Mockito.verify;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.MockitoAnnotations;
+import org.roko.ns3.fic.svc.service.FileIdCalculatorService;
+import org.roko.ns3.fic.svc.service.FileIdCalculatorServiceImpl;
 import org.roko.ns3.fix.svc.rules.ByteArrayRule;
 import org.roko.ns3.fix.svc.rules.MessageDigestRule;
 
