@@ -11,6 +11,10 @@ In order to provide scalability and high availability of the service, it makes s
 - catalog
 - storage
 
+In order to implement the mentionde above main components, additional helper/supporting components are needed:
+
+- fic (file id calculator)
+
 ### Catalog
 
 The purpose of this part would be to keep the metadata related to the files that are being uploaded.
@@ -36,6 +40,7 @@ This part could be implemented as serverless.
 
 Tasks:
 
+- adopt fix in catalog microservice
 - brief description
 - API definition/documentation
 - project structure
@@ -47,8 +52,7 @@ Tasks:
 
 Next steps:
 
-- start implementing storage api componeent
-- find out how to instantiate MessageDigest as a bean and then have it ingested where needed
+- start implementing storage api component
 
 ## Future Improvements
 
