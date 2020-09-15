@@ -27,7 +27,15 @@ public class FileIDCalculatorClientImpl implements FileIDCalculatorClient {
 	public String calculate(byte[] data) {
 	    MultiValueMap<String, Object> map = new LinkedMultiValueMap<String, Object>();
 
-	    ByteArrayResource contentsAsResource = new ByteArrayResource(data);
+	    map.add("name", "filename");
+	    map.add("filename", "filename");
+	    
+	    ByteArrayResource contentsAsResource = new ByteArrayResource(data){
+	        @Override
+	        public String getFilename() {
+	            return "filename";
+	        }
+	    };
 	    map.add("file", contentsAsResource);
 
 	    return restTemplate.postForObject(calculateFunctionUrl, map, String.class);
