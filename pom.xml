@@ -9,6 +9,5 @@
         <module>org.roko.ns3.doc</module>
         <module>org.roko.ns3.fic.svc</module>
         <module>org.roko.ns3.fic.client</module>
-  	<module>org.roko.ns3.storage.api</module>
   </modules>
 </project>
