@@ -9,11 +9,11 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>org.roko.ns3</groupId>
-	<artifactId>org.roko.ns3.storage.svc.api</artifactId>
+	<artifactId>org.roko.ns3.storage.api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>org.roko.ns3.storage.svc.api</name>
-	<description>Storage Service API</description>
+	<name>org.roko.ns3.storage.api</name>
+	<description>Storage Service REST API</description>
 
 	<properties>
 		<java.version>1.8</java.version>

@@ -10,6 +10,6 @@
         <module>org.roko.ns3.fic.api</module>
         <module>org.roko.ns3.fic.client</module>
 	<module>org.roko.ns3.storage.bucket.api</module>
-	<module>org.roko.ns3.storage.svc.api</module>
+	<module>org.roko.ns3.storage.api</module>
   </modules>
 </project>
