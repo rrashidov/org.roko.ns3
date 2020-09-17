@@ -57,3 +57,13 @@ Next steps:
 ## Future Improvements
 
 - implement fic (file ID calculator) as serverless;
+
+## Unsorted
+
+### Module naming concept
+
+The overall service will be built by multiple micro services. Those micro services will be materialized in the form of maven modules. Besides the micro service itself, almost all of them will have a Java client, which in term will also be materialized in thee form of maven module. So, a given microservce, could materialize in the form of the following maven modules:
+
+- <micro service name>.api - this component will contain the REST API that exposes the functionality provided by the micro service;
+- <micro service name>.client - this component will contain the Java client that will make it possible the consume the REST API provided by the micro service;
+  
