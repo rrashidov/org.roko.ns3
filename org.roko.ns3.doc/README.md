@@ -66,4 +66,11 @@ The overall service will be built by multiple micro services. Those micro servic
 
 - <micro service name>.api - this component will contain the REST API that exposes the functionality provided by the micro service;
 - <micro service name>.client - this component will contain the Java client that will make it possible the consume the REST API provided by the micro service;
-  
+
+### List of microservices
+
+- fic - file id calculator
+- storage.bucket - storage bucket
+- storage - storage
+- catalog - catalog
+- api - API
