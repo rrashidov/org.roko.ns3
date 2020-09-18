@@ -1,4 +1,4 @@
-package org.roko.ns3.org.roko.ns3.storage.bucket.svc;
+package org.roko.ns3.storage.bucket.api;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
