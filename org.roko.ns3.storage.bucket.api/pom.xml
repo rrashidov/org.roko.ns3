@@ -11,7 +11,6 @@
 	<groupId>org.roko.ns3</groupId>
 	<artifactId>org.roko.ns3.storage.bucket.api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
 	<name>org.roko.ns3.storage.bucket.api</name>
 	<description>Storage Bucket Service REST API</description>
 
