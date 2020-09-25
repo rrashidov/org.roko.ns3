@@ -21,7 +21,7 @@ The purpose of this part would be to keep the metadata related to the files that
 
 ### Storage
 
-The purpose of this part would be just to store the files, without keeping track of metadata related to the file (tenant, path, event name maybe). From this point of view, the APIs/capabilities of the Storage component would be the following ones:
+The purpose of this part would be just to store the files, without keeping track of metadata related to the file (tenant, path, even name maybe). From this point of view, the APIs/capabilities of the Storage component would be the following ones:
 
 - putFile(String id, File f)
 - OutputStream getFile(String id)
