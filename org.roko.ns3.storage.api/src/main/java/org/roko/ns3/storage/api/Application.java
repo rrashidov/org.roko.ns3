@@ -1,4 +1,4 @@
-package org.roko.ns3.storage.svc.api;
+package org.roko.ns3.storage.api;
 
 import org.roko.ns3.fic.client.api.FileIDCalculatorClient;
 import org.roko.ns3.fic.client.api.FileIDCalculatorClientFactory;

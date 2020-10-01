@@ -1,8 +1,9 @@
-package org.roko.ns3.storage.svc.api;
+package org.roko.ns3.storage.api;
 
 import java.io.IOException;
 
 import org.roko.ns3.fic.client.api.FileIDCalculatorClient;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;

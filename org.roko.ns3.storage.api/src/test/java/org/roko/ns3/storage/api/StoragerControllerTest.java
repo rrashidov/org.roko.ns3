@@ -1,4 +1,4 @@
-package org.roko.ns3.storage.svc.api;
+package org.roko.ns3.storage.api;
 
 import static org.mockito.Mockito.when;
 import static org.mockito.Mockito.verify;
@@ -12,6 +12,7 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.roko.ns3.fic.client.api.FileIDCalculatorClient;
+import org.roko.ns3.storage.api.StoragerController;
 import org.springframework.web.multipart.MultipartFile;
 
 public class StoragerControllerTest {
