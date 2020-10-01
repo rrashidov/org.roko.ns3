@@ -74,3 +74,10 @@ The overall service will be built by multiple micro services. Those micro servic
 - storage - storage
 - catalog - catalog
 - api - API
+
+## Dev Setup
+
+- fix - localhost:8081
+- storage.api - localhost:8082
+- storage.bucket - localhost:8083
+- api - localhost:8080
