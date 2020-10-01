@@ -1,14 +1,14 @@
 [
 	{
-		"serviceUrl": "localhost:9081"
+		"serviceUrl": "http://storage.bucket.1:8080"
 	},
 	{
-		"serviceUrl": "localhost:9082"
+		"serviceUrl": "http://storage.bucket.2:8080"
 	},
 	{
-		"serviceUrl": "localhost:9083"
+		"serviceUrl": "http://storage.bucket.3:8080"
 	},
 	{
-		"serviceUrl": "localhost:9084"
+		"serviceUrl": "http://storage.bucket.4:8080"
 	}
 ]
