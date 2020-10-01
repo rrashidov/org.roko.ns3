@@ -50,14 +50,19 @@ services:
     build: 
       context : ./docker_context
       dockerfile: Dockerfile-storage
+    depends_on:
+      - "fic"
+      - "storage.bucket.1"
+      - "storage.bucket.2"
+      - "storage.bucket.3"
+      - "storage.bucket.4"
     volumes:
       - .:/docker-context
     environment:
       STORAGE_BUCKET_CLIENT_CONFIG_FILE: /docker-context/storage_bucket_client_config.json
       FIC_SVC_URL: http://fic:8080
     ports:
-      - "8082:8080"
-      
+      - "8082:8080"      
 volumes:
   storage.bucket.1:
   storage.bucket.2:
