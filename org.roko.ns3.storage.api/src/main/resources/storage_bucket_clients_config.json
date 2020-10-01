@@ -1,0 +1,14 @@
+[
+	{
+		"serviceUrl": "localhost:9000"
+	},
+	{
+		"serviceUrl": "localhost:9001"
+	},
+	{
+		"serviceUrl": "localhost:9002"
+	},
+	{
+		"serviceUrl": "localhost:9003"
+	}
+]
