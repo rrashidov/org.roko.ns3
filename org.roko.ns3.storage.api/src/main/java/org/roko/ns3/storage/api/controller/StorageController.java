@@ -16,13 +16,13 @@ import org.springframework.web.multipart.MultipartFile;
 
 @RestController
 @RequestMapping("/api/v1/files")
-public class StoragerController {
+public class StorageController {
 
 	private FileIDCalculatorClient fileIdCalculatorClient;
 	private BucketShardingService bucketSharddingService;
 
 	@Autowired
-	public StoragerController(FileIDCalculatorClient fileIdCalculatorClient, BucketShardingService bucketSharddingService, FileEntityRepo fileRepoMock) {
+	public StorageController(FileIDCalculatorClient fileIdCalculatorClient, BucketShardingService bucketSharddingService, FileEntityRepo fileRepoMock) {
 		this.fileIdCalculatorClient = fileIdCalculatorClient;
 		this.bucketSharddingService = bucketSharddingService;
 	}

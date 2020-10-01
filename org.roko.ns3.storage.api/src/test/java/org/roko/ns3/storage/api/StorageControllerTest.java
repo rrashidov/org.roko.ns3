@@ -12,12 +12,12 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.roko.ns3.fic.client.api.FileIDCalculatorClient;
-import org.roko.ns3.storage.api.controller.StoragerController;
+import org.roko.ns3.storage.api.controller.StorageController;
 import org.roko.ns3.storage.api.repo.FileEntityRepo;
 import org.roko.ns3.storage.api.service.rules.BucketShardingServiceRule;
 import org.springframework.web.multipart.MultipartFile;
 
-public class StoragerControllerTest {
+public class StorageControllerTest {
 
 	private static final String TEST_FILE_ID = "123123";
 
@@ -34,7 +34,7 @@ public class StoragerControllerTest {
 	@Mock
 	private MultipartFile fileMock;
 
-	private StoragerController controller;
+	private StorageController controller;
 
 	@BeforeEach
 	public void setup() throws IOException {
@@ -44,7 +44,7 @@ public class StoragerControllerTest {
 
 		when(fileIdCalculatorClientMock.calculate(any(byte[].class))).thenReturn(TEST_FILE_ID);
 
-		controller = new StoragerController(fileIdCalculatorClientMock, bucketShardingServiceRule.mock, fileRepoMock);
+		controller = new StorageController(fileIdCalculatorClientMock, bucketShardingServiceRule.mock, fileRepoMock);
 	}
 
 	@Test
