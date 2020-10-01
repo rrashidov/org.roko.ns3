@@ -62,6 +62,7 @@ services:
     environment:
       STORAGE_BUCKET_CLIENT_CONFIG_FILE: /docker-context/storage_bucket_client_config.json
       FIC_SVC_URL: http://fic:8080
+      DB_HOST: db.storage
     ports:
       - "8082:8080"
   db.storage:
