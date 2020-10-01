@@ -40,7 +40,7 @@ public class ConfigFileStorageBucketClientRepo implements StorageBucketClientRep
 					.fromJson(new FileReader(new File(configFilePath)), configListType);
 
 			for (Entry<String, StorageBucketClientConfig> entry : storageBucketClientConfigs.entrySet()) {
-				result.put(entry.getKey(), StorageBucketClientFactory.get(entry.getValue().getServiceUrl()));
+				result.put(entry.getKey(), StorageBucketClientFactory.get(entry.getKey(), entry.getValue().getServiceUrl()));
 			}
 		} catch (JsonIOException | JsonSyntaxException | FileNotFoundException e) {
 			e.printStackTrace();

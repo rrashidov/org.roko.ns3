@@ -22,6 +22,8 @@ import org.springframework.web.client.RestTemplate;
 
 public class FileSystemStorageBucketClientTest {
 	
+	private static final String TEST_CLIENT_ID = "1";
+
 	private static final String CREATE_URL_TEMPLATE = "%s/api/v1/files/%s";
 
 	private static final String FILE_REQUEST_PARAM_NAME = "file";
@@ -46,7 +48,7 @@ public class FileSystemStorageBucketClientTest {
 	public void setup() {
 		MockitoAnnotations.initMocks(this);
 		
-		client = new FileSystemStorageBucketClient(TEST_BUCKET_SERVICE_URL, restTemplateMock);
+		client = new FileSystemStorageBucketClient(TEST_CLIENT_ID, TEST_BUCKET_SERVICE_URL, restTemplateMock);
 	}
 	
 	@Test

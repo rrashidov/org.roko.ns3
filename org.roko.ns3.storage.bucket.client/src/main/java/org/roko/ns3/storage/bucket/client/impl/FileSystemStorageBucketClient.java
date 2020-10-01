@@ -11,17 +11,24 @@ import org.springframework.web.client.RestTemplate;
 public class FileSystemStorageBucketClient implements StorageBucketClient {
 
 	private static final String CREATE_URL_TEMPLATE = "%s/api/v1/files/%s";
-	
+
+	private String id;
 	private String serviceUrl;
 	private RestTemplate restTemplate;
 
-	public FileSystemStorageBucketClient(String serviceURL) {
-		this(serviceURL, new RestTemplate());
+	public FileSystemStorageBucketClient(String id, String serviceURL) {
+		this(id, serviceURL, new RestTemplate());
 	}
 
-	public FileSystemStorageBucketClient(String serviceUrl, RestTemplate restTemplate) {
+	public FileSystemStorageBucketClient(String id, String serviceUrl, RestTemplate restTemplate) {
+		this.id = id;
 		this.serviceUrl = serviceUrl;
 		this.restTemplate = restTemplate;
+	}
+
+	@Override
+	public String getId() {
+		return id;
 	}
 
 	@Override
