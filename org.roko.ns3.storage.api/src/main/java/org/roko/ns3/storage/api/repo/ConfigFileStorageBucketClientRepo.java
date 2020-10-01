@@ -9,6 +9,7 @@ import java.util.List;
 
 import org.roko.ns3.storage.api.repo.model.StorageBucketClientConfig;
 import org.roko.ns3.storage.bucket.client.api.StorageBucketClient;
+import org.roko.ns3.storage.bucket.client.api.StorageBucketClientFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -33,7 +34,10 @@ public class ConfigFileStorageBucketClientRepo implements StorageBucketClientRep
 		Gson gson = new Gson();
 		
 		try {
-			return (List<StorageBucketClient>)gson.fromJson(new FileReader(new File(configFilePath)), configListType);
+			List<StorageBucketClientConfig> storageBucketClientConfigs = (List<StorageBucketClientConfig>)gson.fromJson(new FileReader(new File(configFilePath)), configListType);
+			for (StorageBucketClientConfig storageBucketClientConfig : storageBucketClientConfigs) {
+				result.add(StorageBucketClientFactory.get(storageBucketClientConfig.getServiceUrl()));
+			}
 		} catch (JsonIOException | JsonSyntaxException | FileNotFoundException e) {
 			e.printStackTrace();
 		}
