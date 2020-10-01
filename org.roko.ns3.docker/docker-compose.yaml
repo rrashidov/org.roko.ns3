@@ -1,0 +1,9 @@
+version: "3.8"
+services:
+  fic:
+    build: 
+      context : .
+      dockerfile: Dockerfile-fic
+    ports:
+      - "8081:8080"
+
