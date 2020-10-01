@@ -3,7 +3,8 @@ package org.roko.ns3.storage.api.controller;
 import java.io.IOException;
 
 import org.roko.ns3.fic.client.api.FileIDCalculatorClient;
-
+import org.roko.ns3.storage.api.service.BucketShardingService;
+import org.roko.ns3.storage.bucket.client.api.StorageBucketClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,10 +18,12 @@ import org.springframework.web.multipart.MultipartFile;
 public class StoragerController {
 
 	private FileIDCalculatorClient fileIdCalculatorClient;
+	private BucketShardingService bucketSharddingService;
 
 	@Autowired
-	public StoragerController(FileIDCalculatorClient fileIdCalculatorClient) {
+	public StoragerController(FileIDCalculatorClient fileIdCalculatorClient, BucketShardingService bucketSharddingService) {
 		this.fileIdCalculatorClient = fileIdCalculatorClient;
+		this.bucketSharddingService = bucketSharddingService;
 	}
 
 	@GetMapping
@@ -30,6 +33,14 @@ public class StoragerController {
 	
 	@PostMapping
 	public String upload(@RequestParam("file") MultipartFile file) throws IOException {
-		return fileIdCalculatorClient.calculate(file.getBytes());
+		byte[] fileData = file.getBytes();
+		
+		String fileId = fileIdCalculatorClient.calculate(fileData);
+		
+		StorageBucketClient storageBucketClient = bucketSharddingService.get(fileId);
+		
+		storageBucketClient.create(fileId, fileData);
+		
+		return fileId;
 	}
 }
