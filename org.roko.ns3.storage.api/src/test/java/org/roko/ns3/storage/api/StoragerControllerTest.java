@@ -12,7 +12,7 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.roko.ns3.fic.client.api.FileIDCalculatorClient;
-import org.roko.ns3.storage.api.StoragerController;
+import org.roko.ns3.storage.api.controller.StoragerController;
 import org.springframework.web.multipart.MultipartFile;
 
 public class StoragerControllerTest {

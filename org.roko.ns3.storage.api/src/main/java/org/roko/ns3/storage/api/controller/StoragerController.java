@@ -1,4 +1,4 @@
-package org.roko.ns3.storage.api;
+package org.roko.ns3.storage.api.controller;
 
 import java.io.IOException;
 
