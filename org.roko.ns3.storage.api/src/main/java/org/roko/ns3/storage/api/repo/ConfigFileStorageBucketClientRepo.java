@@ -4,8 +4,9 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
 
 import org.roko.ns3.storage.api.repo.model.StorageBucketClientConfig;
 import org.roko.ns3.storage.bucket.client.api.StorageBucketClient;
@@ -23,25 +24,28 @@ public class ConfigFileStorageBucketClientRepo implements StorageBucketClientRep
 
 	@Value("${storage.bucket.client.config.file}")
 	private String configFilePath;
-	
+
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<StorageBucketClient> list() {
-		List<StorageBucketClient> result = new ArrayList<StorageBucketClient>();
-		
-		Type configListType = new TypeToken<ArrayList<StorageBucketClientConfig>>(){}.getType();
-		
+	public Map<String, StorageBucketClient> list() {
+		Map<String, StorageBucketClient> result = new HashMap<String, StorageBucketClient>();
+
+		Type configListType = new TypeToken<Map<String, StorageBucketClientConfig>>() {
+		}.getType();
+
 		Gson gson = new Gson();
-		
+
 		try {
-			List<StorageBucketClientConfig> storageBucketClientConfigs = (List<StorageBucketClientConfig>)gson.fromJson(new FileReader(new File(configFilePath)), configListType);
-			for (StorageBucketClientConfig storageBucketClientConfig : storageBucketClientConfigs) {
-				result.add(StorageBucketClientFactory.get(storageBucketClientConfig.getServiceUrl()));
+			Map<String, StorageBucketClientConfig> storageBucketClientConfigs = (Map<String, StorageBucketClientConfig>) gson
+					.fromJson(new FileReader(new File(configFilePath)), configListType);
+
+			for (Entry<String, StorageBucketClientConfig> entry : storageBucketClientConfigs.entrySet()) {
+				result.put(entry.getKey(), StorageBucketClientFactory.get(entry.getValue().getServiceUrl()));
 			}
 		} catch (JsonIOException | JsonSyntaxException | FileNotFoundException e) {
 			e.printStackTrace();
 		}
-		
+
 		return result;
 	}
 

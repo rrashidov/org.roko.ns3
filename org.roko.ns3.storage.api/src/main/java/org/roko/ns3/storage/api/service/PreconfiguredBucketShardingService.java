@@ -25,7 +25,7 @@ public class PreconfiguredBucketShardingService implements BucketShardingService
 		
 		BigInteger bucketId = fileId.remainder(new BigInteger(String.valueOf(storageBucketClientsCount), 10));
 		
-		return storageBucketClientRepo.list().get(bucketId.intValue());
+		return storageBucketClientRepo.list().get(String.valueOf(bucketId.intValue()));
 	}
 
 }

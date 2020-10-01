@@ -1,14 +1,14 @@
-[
-	{
+{
+	"0": {
 		"serviceUrl": "http://storage.bucket.1:8080"
 	},
-	{
+	"1": {
 		"serviceUrl": "http://storage.bucket.2:8080"
 	},
-	{
+	"2": {
 		"serviceUrl": "http://storage.bucket.3:8080"
 	},
-	{
-		"serviceUrl": "http://storage.bucket.4:8080"
+	"3": {
+		"serviceUrl": "http://storage.bucket.3:8080"
 	}
-]
+}

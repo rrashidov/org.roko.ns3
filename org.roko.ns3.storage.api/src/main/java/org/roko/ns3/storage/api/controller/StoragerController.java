@@ -3,6 +3,7 @@ package org.roko.ns3.storage.api.controller;
 import java.io.IOException;
 
 import org.roko.ns3.fic.client.api.FileIDCalculatorClient;
+import org.roko.ns3.storage.api.repo.FileEntityRepo;
 import org.roko.ns3.storage.api.service.BucketShardingService;
 import org.roko.ns3.storage.bucket.client.api.StorageBucketClient;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,7 @@ public class StoragerController {
 	private BucketShardingService bucketSharddingService;
 
 	@Autowired
-	public StoragerController(FileIDCalculatorClient fileIdCalculatorClient, BucketShardingService bucketSharddingService) {
+	public StoragerController(FileIDCalculatorClient fileIdCalculatorClient, BucketShardingService bucketSharddingService, FileEntityRepo fileRepoMock) {
 		this.fileIdCalculatorClient = fileIdCalculatorClient;
 		this.bucketSharddingService = bucketSharddingService;
 	}
