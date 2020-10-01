@@ -13,12 +13,12 @@ import org.springframework.web.multipart.MultipartFile;
 
 @RestController
 @RequestMapping("/api/v1/files")
-public class StorageServiceAPIController {
+public class StoragerController {
 
 	private FileIDCalculatorClient fileIdCalculatorClient;
 
 	@Autowired
-	public StorageServiceAPIController(FileIDCalculatorClient fileIdCalculatorClient) {
+	public StoragerController(FileIDCalculatorClient fileIdCalculatorClient) {
 		this.fileIdCalculatorClient = fileIdCalculatorClient;
 	}
 

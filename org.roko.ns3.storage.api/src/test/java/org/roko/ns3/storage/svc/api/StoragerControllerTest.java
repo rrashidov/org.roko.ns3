@@ -14,7 +14,7 @@ import org.mockito.MockitoAnnotations;
 import org.roko.ns3.fic.client.api.FileIDCalculatorClient;
 import org.springframework.web.multipart.MultipartFile;
 
-public class StorageServiceAPIControllerTest {
+public class StoragerControllerTest {
 
 	private static final String TEST_FILE_ID = "123123";
 
@@ -26,7 +26,7 @@ public class StorageServiceAPIControllerTest {
 	@Mock
 	private MultipartFile fileMock;
 
-	private StorageServiceAPIController controller;
+	private StoragerController controller;
 
 	@BeforeEach
 	public void setup() throws IOException {
@@ -36,7 +36,7 @@ public class StorageServiceAPIControllerTest {
 		
 		when(fileIdCalculatorClientMock.calculate(any(byte[].class))).thenReturn(TEST_FILE_ID);
 
-		controller = new StorageServiceAPIController(fileIdCalculatorClientMock);
+		controller = new StoragerController(fileIdCalculatorClientMock);
 	}
 
 	@Test
