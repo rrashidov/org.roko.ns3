@@ -5,14 +5,17 @@ import static org.mockito.Mockito.verify;
 
 import java.io.IOException;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.roko.ns3.fic.client.api.FileIDCalculatorClient;
 import org.roko.ns3.storage.api.controller.StorageController;
+import org.roko.ns3.storage.api.model.FileEntity;
 import org.roko.ns3.storage.api.repo.FileEntityRepo;
 import org.roko.ns3.storage.api.service.rules.BucketShardingServiceRule;
 import org.springframework.web.multipart.MultipartFile;
@@ -66,5 +69,19 @@ public class StorageControllerTest {
 		controller.upload(fileMock);
 
 		verify(bucketShardingServiceRule.defaultStorageBucketClient).create(TEST_FILE_ID, TEST_BYTE_ARRAY);
+	}
+
+	@Test
+	public void fileEntityIsPersistedWhenFileUploaded() throws IOException {
+		controller.upload(fileMock);
+
+		ArgumentCaptor<FileEntity> fileEntityArgumentCaptor = ArgumentCaptor.forClass(FileEntity.class);
+
+		verify(fileRepoMock).saveAndFlush(fileEntityArgumentCaptor.capture());
+
+		FileEntity capturedFileEntity = fileEntityArgumentCaptor.getValue();
+
+		assertEquals(TEST_FILE_ID, capturedFileEntity.getId());
+		assertEquals(BucketShardingServiceRule.DEFAULT_STORAGE_BUCKET_CLIENT_ID, capturedFileEntity.getBucketId());
 	}
 }

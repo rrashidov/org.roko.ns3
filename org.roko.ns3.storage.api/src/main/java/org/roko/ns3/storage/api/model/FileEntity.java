@@ -12,6 +12,11 @@ public class FileEntity {
 	
 	@Column
 	private String bucketId;
+	
+	public FileEntity(String id, String bucketId) {
+		this.id = id;
+		this.bucketId = bucketId;
+	}
 
 	public String getId() {
 		return id;
