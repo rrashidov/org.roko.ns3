@@ -14,5 +14,6 @@
 	<module>org.roko.ns3.storage.bucket.client</module>
 	<module>org.roko.ns3.storage.api</module>
 	<module>org.roko.ns3.storage.client</module>
+	<module>org.roko.ns3.catalog.api</module>
   </modules>
 </project>
