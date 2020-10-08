@@ -1,13 +1,13 @@
 package org.roko.ns3.org.roko.ns3.catalog.api.model;
 
-public class ParsedStorageEntry {
+public class StorageEntryDTO {
 
 	private String name;
 	private String path;
 	private StorageEntryType storageEntryType;
 	private String parentPath;
 	
-	public ParsedStorageEntry(String name, String path, StorageEntryType storageEntryType, String parentPath) {
+	public StorageEntryDTO(String name, String path, StorageEntryType storageEntryType, String parentPath) {
 		this.name = name;
 		this.path = path;
 		this.storageEntryType = storageEntryType;

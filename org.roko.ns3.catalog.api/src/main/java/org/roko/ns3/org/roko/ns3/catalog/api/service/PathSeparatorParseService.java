@@ -3,7 +3,7 @@ package org.roko.ns3.org.roko.ns3.catalog.api.service;
 import java.util.LinkedList;
 import java.util.List;
 
-import org.roko.ns3.org.roko.ns3.catalog.api.model.ParsedStorageEntry;
+import org.roko.ns3.org.roko.ns3.catalog.api.model.StorageEntryDTO;
 import org.roko.ns3.org.roko.ns3.catalog.api.model.StorageEntryType;
 
 public class PathSeparatorParseService implements PathParseService {
@@ -13,8 +13,8 @@ public class PathSeparatorParseService implements PathParseService {
 	private static final String SEPARATOR = "/";
 
 	@Override
-	public List<ParsedStorageEntry> parse(String path) throws PathParseException {
-		List<ParsedStorageEntry> result = new LinkedList<ParsedStorageEntry>();
+	public List<StorageEntryDTO> parse(String path) throws PathParseException {
+		List<StorageEntryDTO> result = new LinkedList<StorageEntryDTO>();
 
 		if (!path.startsWith(SEPARATOR)) {
 			throw new PathParseException("Path should start with sepparator: " + path);
@@ -32,7 +32,7 @@ public class PathSeparatorParseService implements PathParseService {
 
 			accumulatedPath.append(name + SEPARATOR);
 
-			ParsedStorageEntry parsedStorageEntry = new ParsedStorageEntry(normalizedName, accumulatedPath.toString(),
+			StorageEntryDTO parsedStorageEntry = new StorageEntryDTO(normalizedName, accumulatedPath.toString(),
 					StorageEntryType.DIRECTORY, parentStorageEntryPath);
 			
 			result.add(parsedStorageEntry);
@@ -44,7 +44,7 @@ public class PathSeparatorParseService implements PathParseService {
 
 		if (!remainingPathToParse.isEmpty()) {
 			accumulatedPath.append(remainingPathToParse);
-			result.add(new ParsedStorageEntry(normalizeName(remainingPathToParse), accumulatedPath.toString(),
+			result.add(new StorageEntryDTO(normalizeName(remainingPathToParse), accumulatedPath.toString(),
 					StorageEntryType.FILE, parentStorageEntryPath));
 		}
 		
