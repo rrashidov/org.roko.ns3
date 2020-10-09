@@ -65,6 +65,18 @@ services:
       DB_HOST: db.storage
     ports:
       - "8082:8080"
+  catalog:
+    build: 
+      context : ./docker_context
+      dockerfile: Dockerfile-catalog
+    depends_on:
+      - "db.catalog"
+    volumes:
+      - .:/docker-context
+    environment:
+      DB_HOST: db.catalog
+    ports:
+      - "8083:8080"
   db.storage:
     image: mysql:5.7
     environment:
@@ -74,6 +86,15 @@ services:
       MYSQL_PASSWORD: 'storage'
     ports:
       - '3306:3306'
+  db.catalog:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: 'root'
+      MYSQL_DATABASE: 'catalog'
+      MYSQL_USER: 'catalog'
+      MYSQL_PASSWORD: 'catalog'
+    ports:
+      - '3307:3306'
 volumes:
   storage.bucket.1:
   storage.bucket.2:
