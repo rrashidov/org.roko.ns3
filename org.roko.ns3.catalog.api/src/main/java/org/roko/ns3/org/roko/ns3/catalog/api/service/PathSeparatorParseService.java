@@ -5,7 +5,9 @@ import java.util.List;
 
 import org.roko.ns3.org.roko.ns3.catalog.api.model.StorageEntryDTO;
 import org.roko.ns3.org.roko.ns3.catalog.api.model.StorageEntryType;
+import org.springframework.stereotype.Service;
 
+@Service
 public class PathSeparatorParseService implements PathParseService {
 
 	private static final String ROOT_ENTRY_NAME = "ROOT";
