@@ -77,6 +77,15 @@ services:
       DB_HOST: db.catalog
     ports:
       - "8083:8080"
+  api:
+    build: 
+      context : ./docker_context
+      dockerfile: Dockerfile-api
+    depends_on:
+      - "catalog"
+      - "storage"
+    ports:
+      - "8080:8080"
   db.storage:
     image: mysql:5.7
     environment:
