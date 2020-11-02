@@ -1,0 +1,5 @@
+FROM openjdk:8-jdk-alpine
+ARG JAR_FILE=org.roko.ns3.svc.catalog.api-0.0.1-SNAPSHOT.jar
+COPY ${JAR_FILE} catalog.jar
+ENTRYPOINT ["java","-jar","/catalog.jar"]
+

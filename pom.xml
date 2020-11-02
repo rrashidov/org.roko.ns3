@@ -6,15 +6,15 @@
   <packaging>pom</packaging>
   
   <modules>
-        <module>org.roko.ns3.doc</module>
-	<module>org.roko.ns3.docker</module>
-        <module>org.roko.ns3.fic.api</module>
-        <module>org.roko.ns3.fic.client</module>
-	<module>org.roko.ns3.storage.bucket.api</module>
-	<module>org.roko.ns3.storage.bucket.client</module>
-	<module>org.roko.ns3.storage.api</module>
-	<module>org.roko.ns3.storage.client</module>
-	<module>org.roko.ns3.catalog.api</module>
-	<module>org.roko.ns3.api</module>
+        <module>org.roko.ns3.doc.readme</module>
+	<module>org.roko.ns3.dev.docker</module>
+        <module>org.roko.ns3.svc.fic.api</module>
+        <module>org.roko.ns3.svc.fic.client</module>
+	<module>org.roko.ns3.svc.storage.bucket.api</module>
+	<module>org.roko.ns3.svc.storage.bucket.client</module>
+	<module>org.roko.ns3.svc.storage.api</module>
+	<module>org.roko.ns3.svc.storage.client</module>
+	<module>org.roko.ns3.svc.catalog.api</module>
+	<module>org.roko.ns3.svc.api</module>
   </modules>
 </project>

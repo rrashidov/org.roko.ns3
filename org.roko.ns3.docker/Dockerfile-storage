@@ -1,5 +1,0 @@
-FROM openjdk:8-jdk-alpine
-ARG JAR_FILE=org.roko.ns3.storage.api-0.0.1-SNAPSHOT.jar
-COPY ${JAR_FILE} storage.jar
-ENTRYPOINT ["java","-jar","/storage.jar"]
-
