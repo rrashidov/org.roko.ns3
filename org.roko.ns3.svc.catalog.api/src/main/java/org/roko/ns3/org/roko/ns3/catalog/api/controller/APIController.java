@@ -15,10 +15,10 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.HandlerMapping;
 
 @RestController
-@RequestMapping(APIController.URL_MAPPINT_ROOT)
+@RequestMapping(APIController.URL_MAPPING_ROOT)
 public class APIController {
 
-	static final String URL_MAPPINT_ROOT = "/api/v1";
+	static final String URL_MAPPING_ROOT = "/api/v1";
 	
 	private PathParseService pathParseService;
 	private StorageEntryService storageEntryService;
@@ -36,7 +36,7 @@ public class APIController {
 		String requestPath = (String) request.getAttribute(
 		        HandlerMapping.PATH_WITHIN_HANDLER_MAPPING_ATTRIBUTE);
 		
-		String catalogPath = requestPath.replace(URL_MAPPINT_ROOT, "");
+		String catalogPath = requestPath.replace(URL_MAPPING_ROOT, "");
 		
 		try {
 			List<StorageEntryDTO> storageEntryDTOs = pathParseService.parse(catalogPath);
