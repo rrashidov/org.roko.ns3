@@ -62,7 +62,22 @@ Next steps:
 
 ### Module naming concept
 
-The overall service will be built by multiple micro services. Those micro services will be materialized in the form of maven modules. Besides the micro service itself, almost all of them will have a Java client, which in term will also be materialized in thee form of maven module. So, a given microservce, could materialize in the form of the following maven modules:
+Modules will be grouped in the following groups:
+
+- svc - modules containing micro service source code;
+- util - modules containing util source code to be shared between other modules;
+- doc - modules containing project related documentation;
+- dev - modules containing information related to the dev process;
+
+In order to distinguish module type, modules will be named based on the following naming convention:
+
+```
+org.roko.ns3.<module type>.<module name>
+```
+
+Example: _org.roko.ns3.svc.catalog.api_
+
+Furthermore, the micro services will be materialized in the form of several maven modules. Besides the micro service itself, almost all of them will have a Java client, which in term will also be materialized in thee form of maven module. So, a given microservce, could materialize in the form of the following maven modules:
 
 - <micro service name>.api - this component will contain the REST API that exposes the functionality provided by the micro service;
 - <micro service name>.client - this component will contain the Java client that will make it possible the consume the REST API provided by the micro service;
